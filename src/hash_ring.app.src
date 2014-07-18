@@ -7,5 +7,6 @@
                   kernel,
                   stdlib
                  ]},
-  {env, []}
+  {env, []},
+  {mod, {hash_ring_app, []}}
  ]}.

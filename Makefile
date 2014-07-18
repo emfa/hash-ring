@@ -28,6 +28,9 @@ else
 	SHARED_LIB = build/libhashring.so
 endif
 
+erl:
+	$(REBAR) compile
+
 lib: $(OBJECTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJECTS) -o $(SHARED_LIB) -shared
 
@@ -40,9 +43,6 @@ test : lib bindings $(TEST_OBJECTS)
 	bin/hash_ring_test
 
 bindings: erl java python
-
-erl:
-	$(REBAR) compile
 	
 java:
 	cd lib/java && gradle jar
